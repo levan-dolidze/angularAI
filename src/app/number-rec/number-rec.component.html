@@ -1,0 +1,21 @@
+
+<div class="cont d-flex justify-content-center align-items-center flex-column">
+
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" (change)="fileChange($event)">
+      <label class="custom-file-label">Select File</label>
+    </div>
+
+  
+    <img #img height="400" width="400" [src]="imgSrc" alt="Selected Image" *ngIf="imgSrc" class="img-thumbnail"
+    style="object-fit: contain;"
+    />
+  
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let item of predictions">
+        {{item.className}} - {{item.probability | percent}}
+      </div>
+    </div>
+  
+  </div>
+  
